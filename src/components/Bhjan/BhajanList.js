@@ -10,12 +10,13 @@ function BhajanList() {
   const [message, setMessage] = useState('');
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [editBhajan, setEditBhajan] = useState(null);
+  const BACKEND_URL = "https://vercel-backend-eta-blue.vercel.app";
 
   const limit = 10;
 
   const fetchBhajans = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/bhajans?search=${search}&page=${page}`);
+      const res = await axios.get(`${BACKEND_URL}/api/bhajans?search=${search}&page=${page}`);
       setBhajans(res.data.bhajans);
       setTotalPages(res.data.totalPages);
     } catch (err) {
@@ -33,7 +34,7 @@ function BhajanList() {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/bhajans/${id}`);
+     await axios.delete(`${BACKEND_URL}/api/bhajans/${id}`);
       setMessage('✅ Bhajan deleted successfully!');
       fetchBhajans();
     } catch (err) {
@@ -52,7 +53,7 @@ function BhajanList() {
 
   const handleEditSave = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/bhajans/${editBhajan._id}`, editBhajan);
+      await axios.put(`${BACKEND_URL}/api/bhajans/${editBhajan._id}`, editBhajan);
       setMessage('✅ Bhajan updated successfully!');
       setEditModalOpen(false);
       fetchBhajans();

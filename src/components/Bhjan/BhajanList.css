@@ -1,0 +1,116 @@
+.bhajan-list-container {
+  max-width: 70%;
+  margin: 30px auto;
+  padding: 20px;
+  background: linear-gradient(to bottom right, #f3e5f5, #ede7f6);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.bhajan-list-container h2 {
+  text-align: center;
+  color: #4a148c;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.bhajan-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  color:black;
+}
+
+.bhajan-table th, .bhajan-table td {
+  padding: 12px;
+  border: 1px solid rgb(196, 192, 192);
+  text-align: left;
+}
+
+.bhajan-table th {
+  background-color: #f3e5f5;
+  color: #4a148c;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination button {
+  background-color: #6a1b9a;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Modal styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  width: 400px;
+}
+
+.modal input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-btn, .delete-btn {
+  margin-right: 8px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.success-message {
+  color: green;
+  margin: 10px 0;
+}
+

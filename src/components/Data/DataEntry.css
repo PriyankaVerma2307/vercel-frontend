@@ -1,0 +1,130 @@
+/* .form-container {
+  max-width: 40%;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fefefe;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: 'Segoe UI', sans-serif;
+} */
+
+.form-container{
+  background: linear-gradient(to bottom right, #f3e5f5, #ede7f6);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(106, 27, 154, 0.2);
+  max-width: 40%;
+  margin: 30px auto;
+  border: 2px solid #ce93d8;
+  font-family: 'Segoe UI', sans-serif;
+  /* animation: floatingShadow 3s ease-in-out infinite alternate; */
+}
+
+
+/* Animation keyframes */
+/* @keyframes floatingShadow {
+  0% {
+    box-shadow: 0 8px 20px rgba(145, 219, 208, 0.2);
+    transform: translateY(0px);
+  }
+  50% {
+    box-shadow: 0 12px 25px rgba(216, 103, 209, 0.3);
+    transform: translateY(-2px);
+  }
+  100% {
+    box-shadow: 0 6px 15px rgba(223, 215, 103, 0.15);
+    transform: translateY(1px);
+  }
+} */
+
+
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 0;
+  color: #4a148c;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, select {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+  border-color: #6a1b9a;
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: #6a1b9a;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #4a148c;
+}
+
+.new-satsang-btn {
+  background-color: #6a1b9a;  /* deep spiritual purple */
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.new-satsang-btn:hover {
+    background-color: #7e57c2;
+  transform: scale(1.05);
+
+}
+
+
+.msg:empty {
+  display: none;
+}
+
+.msg:before {
+  content: "📢 ";
+}
+
+.msg {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #f44336; /* red background for warning */
+}
+
+.section-heading {
+  margin: 20px 0 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #4a148c;
+  border-bottom: 2px solid #e1bee7;
+  padding-bottom: 5px;
+}

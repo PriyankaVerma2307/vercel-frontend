@@ -128,3 +128,30 @@ button[type="submit"]:hover {
   border-bottom: 2px solid #e1bee7;
   padding-bottom: 5px;
 }
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 18px;
+  }
+
+  .section-heading {
+    font-size: 16px;
+  }
+
+  .new-satsang-btn {
+    font-size: 14px;
+  }
+
+  input, select {
+    font-size: 13px;
+  }
+
+  button[type="submit"] {
+    font-size: 14px;
+  }
+
+  .msg {
+    font-size: 13px;
+  }
+}
+

@@ -1,0 +1,86 @@
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login-container h2 {
+  margin-bottom: 25px;
+  color: #4a148c;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 80px;
+}
+
+.toggle-btn {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  background: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.login-container button[type="submit"] {
+  background-color: #6a1b9a;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.login-msg {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* ✅ Mobile responsive */
+@media (max-width: 500px) {
+  .login-container {
+    width: 90%;
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .login-container h2 {
+    font-size: 20px;
+  }
+
+  .login-container input,
+  .toggle-btn,
+  .login-container button[type="submit"] {
+    font-size: 14px;
+  }
+
+  .toggle-btn {
+    padding: 4px 8px;
+  }
+}

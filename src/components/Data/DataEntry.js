@@ -39,7 +39,7 @@ function DataEntry() {
     }
 
     try {
-      await axios.post('https://vercel-backend-eta-blue.vercel.app/api/bhajans', {
+      await axios.post('https://vercel-backend-eta-blue.vercel.app', {
         houseName,
         date,
         nameHindi,

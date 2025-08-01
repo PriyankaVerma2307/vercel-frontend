@@ -11,7 +11,7 @@ function Login({ setIsAuthenticated }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://vercel-backend-eta-blue.vercel.app/api/bhajans', { username, password });
+      const res = await axios.post('https://vercel-backend-eta-blue.vercel.app/api/login', { username, password });
       if (res.data.success) {
         setIsAuthenticated(true);
         setMsg('✅ Login successful');

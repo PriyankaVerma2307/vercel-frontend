@@ -4,9 +4,15 @@ import Layout from "./Layout";
 import Home from "./components/Home/Home";
 import DataEntry from "./components/Data/DataEntry";
 import BhajanList from "./components/Bhjan/BhajanList";
+import Login from "./components/Login/Login";
 import './App.css';
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  if (!isAuthenticated) {
+    return <Login setIsAuthenticated={setIsAuthenticated} />;
+  }
   return (
     <Router>
       <Routes>

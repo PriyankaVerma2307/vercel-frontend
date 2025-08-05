@@ -42,9 +42,13 @@
 
 .pagination {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;  /* center align */
   align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap; /* allows wrap on smaller screens */
 }
+
 
 .pagination button {
   background-color: #6a1b9a;

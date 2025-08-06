@@ -2,6 +2,7 @@
   max-width: 70%;
   margin: 30px auto;
   padding: 20px;
+  padding-bottom: 100px; 
   background: linear-gradient(to bottom right, #f3e5f5, #ede7f6);
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

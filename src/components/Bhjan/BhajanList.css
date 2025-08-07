@@ -72,7 +72,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.4);
+   background: rgba(0,0,0,0.4); 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,12 +105,12 @@
 }
 
 .edit-btn {
-  background-color: #4caf50;
+  background-color: #56dddf;
   color: white;
 }
 
 .delete-btn {
-  background-color: #f44336;
+  background-color: #ec6262;
   color: white;
 }
 
@@ -159,6 +159,10 @@
   .edit-btn, .delete-btn {
     padding: 4px 8px;
     font-size: 13px;
+  }
+
+  .edit-btn{
+    margin-bottom: 4px;
   }
 
   .bhajan-table {

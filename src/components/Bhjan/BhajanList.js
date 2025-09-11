@@ -14,9 +14,18 @@ function BhajanList() {
 
   const limit = 10;
 
+  // 🔹 role from localStorage (login ke time save kiya tha)
+  const role = localStorage.getItem("role"); // "gents" or "ladies"
+  const collection = role === "ladies" ? "ladies-bhajans" : "gents-bhajans";
+
   const fetchBhajans = async () => {
     try {
-      const res = await axios.get(`${BACKEND_URL}/api/bhajans?search=${search}&page=${page}`);
+      const res = await axios.get(
+        `${BACKEND_URL}/api/bhajans?search=${search}&page=${page}`,
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        }
+      );
       setBhajans(res.data.bhajans);
       setTotalPages(res.data.totalPages);
     } catch (err) {
@@ -24,7 +33,8 @@ function BhajanList() {
       setBhajans([]);
     }
   };
-
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     fetchBhajans();
   }, [search, page]);
@@ -34,7 +44,9 @@ function BhajanList() {
     if (!confirmDelete) return;
 
     try {
-     await axios.delete(`${BACKEND_URL}/api/bhajans/${id}`);
+      await axios.delete(`${BACKEND_URL}/api/${collection}/${id}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+      });
       setMessage('✅ Bhajan deleted successfully!');
       fetchBhajans();
     } catch (err) {
@@ -53,7 +65,9 @@ function BhajanList() {
 
   const handleEditSave = async () => {
     try {
-      await axios.put(`${BACKEND_URL}/api/bhajans/${editBhajan._id}`, editBhajan);
+      await axios.put(`${BACKEND_URL}/api/${collection}/${editBhajan._id}`, editBhajan, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+      });
       setMessage('✅ Bhajan updated successfully!');
       setEditModalOpen(false);
       fetchBhajans();
@@ -64,7 +78,7 @@ function BhajanList() {
 
   return (
     <div className="bhajan-list-container">
-      <h2>📖 Bhajan List</h2>
+      <h2>📖 Bhajan List ({role})</h2>
 
       <input
         type="text"

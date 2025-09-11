@@ -11,6 +11,8 @@ function DataEntry() {
   const [message, setMessage] = useState('');
   const [bhajansInSatsang, setBhajansInSatsang] = useState([]);
 
+  const BACKEND_URL =  "https://vercel-backend-eta-blue.vercel.app";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -38,24 +40,35 @@ function DataEntry() {
       return;
     }
 
-    try {
-      await axios.post('https://vercel-backend-eta-blue.vercel.app/api/bhajans', {
+      try {
+        const token = localStorage.getItem("token"); // jab login hua tha, token save kiya hoga
+  
+    await axios.post(
+       `${BACKEND_URL}/api/bhajans/add`,
+       {
         houseName,
         date,
         nameHindi,
         nameHinglish,
         singer,
-      });
-
-      setMessage('✅ Bhajan saved successfully!');
-      setBhajansInSatsang([...bhajansInSatsang, bhajanKey]);
-      setNameHindi('');
-      setNameHinglish('');
-      setSinger('');
-    } catch (err) {
-      console.error(err);
-      setMessage('❌ Error saving bhajan!');
+      },
+     {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     }
+  );
+
+  setMessage("✅ Bhajan saved successfully!");
+  setBhajansInSatsang([...bhajansInSatsang, bhajanKey]);
+  setNameHindi("");
+  setNameHinglish("");
+  setSinger("");
+} catch (err) {
+  console.error(err);
+  setMessage("❌ Error saving bhajan!");
+}
+
   };
 
   const handleNewSatsang = () => {

@@ -27,13 +27,14 @@ function Login({ setIsAuthenticated }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://vercel-backend-eta-blue.vercel.app/api/login', {
+      const res = await axios.post("https://vercel-backend-eta-blue.vercel.app/api/auth/login", {
         username,
         password
       });
 
       if (res.data.token) {
         localStorage.setItem('token', res.data.token);
+        localStorage.setItem('role', res.data.role);
         setIsAuthenticated(true);
         setMsg('✅ Login successful');
       } else {

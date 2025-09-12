@@ -27,7 +27,7 @@ function Login({ setIsAuthenticated }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://vercel-backend-eta-blue.vercel.app/api/auth/login", {
+      const res = await axios.post("https://vercel-backend-eta-blue.vercel.app/api/login", {
         username,
         password
       });

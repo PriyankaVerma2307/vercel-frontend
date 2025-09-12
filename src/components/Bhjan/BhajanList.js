@@ -112,7 +112,7 @@ function BhajanList() {
                 <td>{b.singer}</td>
                 <td>{b.nameHindi} / {b.nameHinglish}</td>
                 <td>{b.houseName}</td>
-                <td>{b.date}</td>
+                <td>{new Date(b.date).toLocaleDateString("en-CA")}</td>
                 <td>
                   <button onClick={() => handleEditClick(b)} className="edit-btn">✏️ Edit</button>
                   <button onClick={() => handleDelete(b._id)} className="delete-btn">🗑 Delete</button>

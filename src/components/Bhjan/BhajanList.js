@@ -44,7 +44,7 @@ function BhajanList() {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`${BACKEND_URL}/api/${collection}/${id}`, {
+      await axios.delete(`${BACKEND_URL}/api/bhajans/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       });
       setMessage('✅ Bhajan deleted successfully!');
@@ -65,7 +65,7 @@ function BhajanList() {
 
   const handleEditSave = async () => {
     try {
-      await axios.put(`${BACKEND_URL}/api/${collection}/${editBhajan._id}`, editBhajan, {
+      await axios.put(`${BACKEND_URL}/api/bhajans/${editBhajan._id}`, editBhajan, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       });
       setMessage('✅ Bhajan updated successfully!');

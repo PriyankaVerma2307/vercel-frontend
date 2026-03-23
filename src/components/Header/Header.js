@@ -4,7 +4,7 @@ import './Header.css';
 function Header() {
   return (
     <div>
-      <h1>Digital Satsang Bhajan Collection Platform</h1>
+      <h1>Welcome , Digital Satsang Bhajan Collection Platform</h1>
     </div>
   );
 }

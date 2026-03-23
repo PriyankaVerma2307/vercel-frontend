@@ -4,7 +4,7 @@ import './Footer.css';
 function Footer() {
   return (
     <div className="footer">
-      <p>©2026 Bhajan App. All Rights Reserved.</p>
+      <p>©2026 Bhajan App. All Rights Reserved.Made with ❤️ by Priyanka </p>
     </div>
   );
 }

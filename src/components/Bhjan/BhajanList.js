@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import './BhajanList.css';
 
@@ -10,15 +10,14 @@ function BhajanList() {
   const [message, setMessage] = useState('');
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [editBhajan, setEditBhajan] = useState(null);
-  const BACKEND_URL = "https://vercel-backend-eta-blue.vercel.app";
 
+  const BACKEND_URL = "https://vercel-backend-eta-blue.vercel.app";
   const limit = 10;
 
-  // 🔹 role from localStorage (login ke time save kiya tha)
   const role = localStorage.getItem("role"); // "gents" or "ladies"
-  const collection = role === "ladies" ? "ladies-bhajans" : "gents-bhajans";
 
-  const fetchBhajans = async () => {
+  // ✅ FIXED: useCallback use kiya
+  const fetchBhajans = useCallback(async () => {
     try {
       const res = await axios.get(
         `${BACKEND_URL}/api/bhajans?search=${search}&page=${page}`,
@@ -32,12 +31,12 @@ function BhajanList() {
       console.error('❌ Error fetching bhajans:', err);
       setBhajans([]);
     }
-  };
-  
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search, page]);
+
+  // ✅ FIXED: proper dependency
   useEffect(() => {
     fetchBhajans();
-  }, [search, page]);
+  }, [fetchBhajans]);
 
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm('Are you sure you want to delete this bhajan?');
@@ -137,15 +136,14 @@ function BhajanList() {
         </button>
       </div>
 
-      {/* Edit Modal */}
       {editModalOpen && (
         <div className="modal-overlay">
           <div className="modal">
             <h3>✏️ Edit Bhajan</h3>
-            <input type="text" name="singer" value={editBhajan.singer} onChange={handleEditChange} placeholder="Singer Name" />
-            <input type="text" name="nameHindi" value={editBhajan.nameHindi} onChange={handleEditChange} placeholder="Bhajan in Hindi" />
-            <input type="text" name="nameHinglish" value={editBhajan.nameHinglish} onChange={handleEditChange} placeholder="Bhajan in Hinglish" />
-            <input type="text" name="houseName" value={editBhajan.houseName} onChange={handleEditChange} placeholder="House Name" />
+            <input type="text" name="singer" value={editBhajan.singer} onChange={handleEditChange} />
+            <input type="text" name="nameHindi" value={editBhajan.nameHindi} onChange={handleEditChange} />
+            <input type="text" name="nameHinglish" value={editBhajan.nameHinglish} onChange={handleEditChange} />
+            <input type="text" name="houseName" value={editBhajan.houseName} onChange={handleEditChange} />
             <input type="date" name="date" value={editBhajan.date} onChange={handleEditChange} />
 
             <div className="modal-buttons">

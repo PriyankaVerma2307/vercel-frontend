@@ -135,9 +135,16 @@ http://localhost:5000
 
 ## 📸 Screenshots
 
+### 🔐 Login Page
 ![Login](./public/login.png)
+
+### 🏠 Home Page
 ![Home](./public/home.png)
+
+### ➕ Data Entry Page
 ![Data Entry](./public/dataentry.png)
+
+### 📋 Bhajan List Page
 ![Bhajan List](./public/bhajanlist.png)
 
 ---

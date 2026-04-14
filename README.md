@@ -46,50 +46,72 @@ A simple and efficient web application to manage bhajans for satsangs. This app 
 
 ---
 
+## 🔗 Backend Repository
+
+The backend for this project is available here:
+
+👉 https://github.com/PriyankaVerma2307/vercel-backend
+
+This backend handles:
+
+* Authentication (JWT)
+* Bhajan CRUD APIs
+* MongoDB database operations
+
+---
+
 ## 📂 Project Structure
 
 ```
-Bhajan-App/
-│
-├── frontend/
-│   ├── components/
-│   ├── pages/
-│   └── styles/
-│
-├── backend/
-│   ├── models/
-│   ├── routes/
-│   ├── controllers/
-│   └── middleware/
-│
-└── README.md
+Frontend (separate repo)
+Backend (separate repo)
 ```
+
+> Note: Frontend and backend are maintained in separate repositories.
 
 ---
 
 ## ⚙️ Installation & Setup
 
-### 1. Clone the repository
+### 🔹 Frontend Setup
 
-```
-git clone <your-repo-link>
-cd Bhajan-App
-```
-
-### 2. Setup Backend
-
-```
-cd backend
+```bash
+git clone https://github.com/PriyankaVerma2307/vercel-frontend
+cd vercel-frontend
 npm install
 npm start
 ```
 
-### 3. Setup Frontend
+---
+
+### 🔹 Backend Setup
+
+```bash
+git clone https://github.com/PriyankaVerma2307/vercel-backend
+cd vercel-backend
+npm install
+```
+
+### Create .env file
+
+Create a `.env` file in the root and add:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+```
+
+### Run backend
+
+```bash
+npm start
+```
+
+Server will run on:
 
 ```
-cd frontend
-npm install
-npm start
+http://localhost:5000
 ```
 
 ---
@@ -111,9 +133,12 @@ npm start
 
 ---
 
-## 📸 Screens (Optional)
+## 📸 Screenshots
 
-(Add screenshots of your app here if required for submission)
+![Login](./public/login.png)
+![Home](./public/home.png)
+![Data Entry](./public/dataentry.png)
+![Bhajan List](./public/bhajanlist.png)
 
 ---
 

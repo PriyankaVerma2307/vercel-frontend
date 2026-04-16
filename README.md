@@ -116,7 +116,7 @@ http://localhost:5000
 
 ---
 
-## 🔐 Login Credentials (Demo)
+## 🔐 Login Credentials (Demo
 
 > You can use the following credentials to login:
 
@@ -124,6 +124,15 @@ http://localhost:5000
 * **Password:** Pass123
 
 ---
+
+## 🚀 Live Demo
+
+The project is fully deployed on Vercel and accessible online:
+
+🔗 Live Link: https://vercel-frontend-smoky.vercel.app
+
+> This deployment automatically updates with every new commit pushed to GitHub using Vercel’s CI/CD integration.
+> 
 
 ## 📌 Rules Implemented
 
